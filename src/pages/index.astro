@@ -1,11 +1,45 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import logoDefault from "../assets/logoDefault.png";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
+<!-- class="h-full w-full bg-linear-to-b from-[#1B262E] to-[#577A94] flex flex-col items-center justify-between p-10" -->
 <Layout>
-	<Welcome />
+  <main
+    class="h-full w-full bg-linear-to-b from-[#1B262E] to-[#577A94] grid grid-cols-1 gap-4 p-10"
+  >
+    <section class="flex flex-col items-center justify-center py-16">
+      <Image src={logoDefault} alt="Logo default" />
+    </section>
+    <section class="flex flex-col justify-end">
+      <div class="pb-6">
+        <h1 class="text-white font-normal text-3xl leading-8">
+          Menú interactivo.
+        </h1>
+        <h1 class="text-white font-normal text-3xl leading-8">
+          Vive la experiencia haciendo tu pedido.
+        </h1>
+      </div>
+      <div>
+        <p class="text-gray-400 pb-3 leading-6">
+          Puedes agregar los participantes de la mesa con el fin de dividir el
+          pedido al final. Ten un mayor control asignando los platos a cada
+          participante.
+        </p>
+        <p class="text-gray-400 leading-6">
+          Si no quieres dividir, puede solo agregar un participante en la
+          siguiente pantalla.
+        </p>
+      </div>
+      <button
+        type="button"
+        class="mt-16 w-full text-base text-white bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-orange-300 shadow-lg shadow-orange-500/50 dark:shadow-lg font-medium rounded-2xl px-5 py-2.5 text-center me-2 mb-2"
+        >Comenzar</button
+      >
+    </section>
+  </main>
 </Layout>
