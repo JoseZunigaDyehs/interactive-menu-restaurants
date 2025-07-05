@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BackButton from "../components/BackButton.astro";
+import { AddParticipants } from "../components/AddParticipants";
+import { gradientButtonClass } from "../helpers/constants";
+import ParticipantsForm from "../components/ParticipantsForm";
+---
+
+<Layout>
+  <main class="h-full w-full">
+    <section
+      class="flex flex-col items-center justify-center bg-linear-to-r from-primary to-primary-dark px-8 pt-12 min-h-[33vh]"
+    >
+      <BackButton />
+      <h1 class="text-white text-4xl font-bold">Participantes de la mesa.</h1>
+      <p class="text-white leading-5 pt-4 pb-6">
+        Para poder generar un desglose de platos por participante de la mesa.
+        Agrega sus nombres y cuando escojas platos, podrás asignarlos a cada
+        participante.
+      </p>
+    </section>
+    <section class="px-6 pb-16 pt-8" style={{ height: "calc(100% - 33vh)" }}>
+      <!-- <AddParticipants client:load /> -->
+      <ParticipantsForm client:load />
+    </section>
+  </main>
+</Layout>
